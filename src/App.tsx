@@ -209,7 +209,7 @@ function App() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a 
-                href="mailto:your.email@example.com"
+                href="mailto:info.wisdomnimako@gmail.com"
                 className="inline-flex items-center gap-3 px-6 py-3 bg-blue-600 dark:bg-blue-500 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200 font-medium"
               >
                 <Mail className="w-5 h-5" />
@@ -242,7 +242,7 @@ function App() {
       <footer className="max-w-4xl mx-auto px-6 py-8 border-t border-gray-200 dark:border-gray-700">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 dark:text-gray-400 text-sm">
-            © 2025 Your Wisdom. Built with React and Tailwind CSS.
+            © 2025 Wisdom. Built with React and Tailwind CSS.
           </p>
           <p className="text-gray-400 dark:text-gray-500 text-sm">
             Currently living in Ghana and working on exciting projects.
