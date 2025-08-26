@@ -15,7 +15,7 @@ function App() {
           {/* Profile Image */}
           <div className="w-48 h-48 rounded-full border-4 border-white dark:border-gray-700 shadow-lg overflow-hidden flex items-center justify-center transition-colors duration-300 bg-gray-100 dark:bg-gray-800">
             <img
-              src="/profile.jpg"
+              src="/profile%20pic.jpg"
               alt="Profile"
               className="object-cover w-full h-full"
               loading="lazy"
