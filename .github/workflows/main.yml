@@ -24,14 +24,15 @@ jobs:
         uses: actions/checkout@v4
 
       # Optional build step (uncomment/customize if you need to build)
-      # - name: Use Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 20
-      # - name: Install and build
-      #   run: |
-      #     npm ci
-      #     npm run build
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build
 
       - name: Login to Azure (OIDC)
         uses: azure/login@v2
@@ -45,7 +46,7 @@ jobs:
         with:
           inlineScript: |
             az storage blob service-properties update \
-              --account-name "$STORAGE_ACCOUNT_NAME" \
+              --account-name "$STORAGEACCOUNTNAME" \
               --static-website \
               --index-document "$INDEX_DOCUMENT" \
               --404-document "$ERROR_DOCUMENT" \
@@ -60,7 +61,7 @@ jobs:
               echo "Site directory '$SITE_DIR' not found"; exit 1
             fi
             az storage blob upload-batch \
-              --account-name "$STORAGE_ACCOUNT_NAME" \
+              --account-name "$STORAGEACCOUNTNAME" \
               --auth-mode login \
               -s "$SITE_DIR" \
               -d '$web' \
