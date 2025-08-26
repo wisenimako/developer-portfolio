@@ -11,7 +11,7 @@ permissions:
 
 env:
   SITE_DIR: dist            # change to your built/static files directory (e.g., "build", "public")
-  STORAGE_ACCOUNT_NAME: ${{ vars.STORAGE_ACCOUNT_NAME }}
+  STORAGE_ACCOUNT_NAME: ${{ vars.STORAGEACCOUNTNAME }}
   INDEX_DOCUMENT: index.html
   ERROR_DOCUMENT: 404.html
 
