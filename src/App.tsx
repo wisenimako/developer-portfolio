@@ -12,9 +12,14 @@ function App() {
       {/* Header */}
       <header className="max-w-4xl mx-auto px-6 pt-16 pb-12">
         <div className="flex flex-col items-center text-center space-y-8">
-          {/* Profile Image Placeholder */}
-          <div className="w-48 h-48 bg-gray-100 dark:bg-gray-800 rounded-full border-4 border-white dark:border-gray-700 shadow-lg flex items-center justify-center transition-colors duration-300">
-            <User className="w-24 h-24 text-gray-400 dark:text-gray-500" />
+          {/* Profile Image */}
+          <div className="w-48 h-48 rounded-full border-4 border-white dark:border-gray-700 shadow-lg overflow-hidden flex items-center justify-center transition-colors duration-300 bg-gray-100 dark:bg-gray-800">
+            <img
+              src="/profile.jpg"
+              alt="Profile"
+              className="object-cover w-full h-full"
+              loading="lazy"
+            />
           </div>
           
           {/* Title */}
