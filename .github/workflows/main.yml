@@ -46,7 +46,7 @@ jobs:
         with:
           inlineScript: |
             az storage blob service-properties update \
-              --account-name "$STORAGEACCOUNTNAME" \
+              --account-name "$STORAGE_ACCOUNT_NAME" \
               --static-website \
               --index-document "$INDEX_DOCUMENT" \
               --404-document "$ERROR_DOCUMENT" \
@@ -61,7 +61,7 @@ jobs:
               echo "Site directory '$SITE_DIR' not found"; exit 1
             fi
             az storage blob upload-batch \
-              --account-name "$STORAGEACCOUNTNAME" \
+              --account-name "$STORAGE_ACCOUNT_NAME" \
               --auth-mode login \
               -s "$SITE_DIR" \
               -d '$web' \
