@@ -20,7 +20,7 @@ function App() {
           {/* Title */}
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 leading-tight">
-              Your Name - Full Stack Developer / 
+              Wisdom Nimako - DevOps Engineer / 
               <br className="hidden md:block" />
               <span className="text-blue-600 dark:text-blue-400">Tech Lead</span>
             </h1>
