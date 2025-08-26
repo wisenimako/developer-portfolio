@@ -37,8 +37,9 @@ function App() {
           {/* Quick Links */}
           <div className="flex flex-wrap gap-4 justify-center">
             <a 
-              href="#" 
+              href="/resume.pdf" 
               className="inline-flex items-center gap-2 px-4 py-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200"
+              target="_blank" rel="noopener noreferrer"
             >
               <Code2 className="w-4 h-4" />
               View Resume
@@ -217,16 +218,18 @@ function App() {
               </a>
               <div className="flex gap-4">
                 <a 
-                  href="#" 
+                  href="https://github.com/wisenimako" 
                   className="p-3 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                   aria-label="GitHub"
+                  target="_blank" rel="noopener noreferrer"
                 >
                   <Github className="w-6 h-6" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.linkedin.com/in/wisdom-nimako-cloud" 
                   className="p-3 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                   aria-label="LinkedIn"
+                  target="_blank" rel="noopener noreferrer"
                 >
                   <Linkedin className="w-6 h-6" />
                 </a>
