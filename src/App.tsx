@@ -2,14 +2,16 @@ import React from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, User } from 'lucide-react';
 import { ThemeToggle } from './components/ThemeToggle';
 import { MouseFollower } from './components/MouseFollower';
+import ParticleBackground from './components/ParticleBackground';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-      <ThemeToggle />
-      <MouseFollower />
-      
-      {/* Header */}
+    <div className="min-h-screen relative bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden">
+      <ParticleBackground />
+      <div className="relative z-10">
+        <ThemeToggle />
+        <MouseFollower />
+        {/* Header */}
       <header className="max-w-4xl mx-auto px-6 pt-16 pb-12">
         <div className="flex flex-col items-center text-center space-y-8">
           {/* Profile Image */}
@@ -109,7 +111,7 @@ function App() {
             <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
               <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Cloud & DevOps</h3>
               <div className="flex flex-wrap gap-2">
-                {['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Terraform'].map((skill) => (
+                {['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'CI/CD', 'Terraform'].map((skill) => (
                   <span key={skill} className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">
                     {skill}
                   </span>
@@ -138,45 +140,14 @@ function App() {
                 </a>
               </div>
               <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include real-time inventory management, 
-                payment processing, and advanced analytics dashboard for merchants.
+                A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include real-time inventory management, order processing, and payment integration. Deployed on AWS with CI/CD pipelines.
               </p>
               <div className="flex flex-wrap gap-2">
-                {['React', 'Node.js', 'PostgreSQL', 'Stripe API', 'AWS'].map((tech) => (
+                {['React', 'Node.js', 'PostgreSQL', 'AWS', 'CI/CD'].map((tech) => (
                   <span key={tech} className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm">
                     {tech}
                   </span>
                 ))}
-              </div>
-            </div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8 flex items-center gap-3">
-              <Briefcase className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              Projects and Achievements
-            </h2>
-            <div className="space-y-8">
-              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Computerized Schools Selection And Placement System (CSSPS), June 2025</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  For the Ministry of Education. Application was run on an Elastic Container Service on AWS with a global scalable database that supports 600,000 students in checking their high school placements.
-                </p>
-              </div>
-              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">GIS/MapStore Application Deployment for Volta River Authority, March 2025</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  Deployed GIS/MapStore docker images to Azure App Service using Infrastructure as Code (Terraform). Application was used to monitor dam water levels in order to notify citizens during controlled spillage.
-                </p>
-              </div>
-              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">E-Ticketing App, November 2024</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  For citizens who cross the Volta Lake for working activities, they could generate virtual tickets for ferries used in commuting. Application hosted on Azure App Service. Eliminating human issued tickets and thus improving citizen accessibility to ferries by 60%.
-                </p>
-              </div>
-              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">OnePay USSD Deployment, April 2024</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  Hosted an application that serves as a single point of entry to multiple payment APIs for the client. Improved their partner onboarding process by 25% due to standardization of APIs. 2023 – 2024
-                </p>
               </div>
             </div>
 
@@ -192,8 +163,7 @@ function App() {
                 </a>
               </div>
               <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                RESTful API for team collaboration and project management. Built with Python FastAPI, featuring advanced 
-                authentication, real-time notifications, and comprehensive documentation.
+                RESTful API for team collaboration and project management. Built with Python FastAPI, featuring advanced authentication, real-time notifications, and comprehensive documentation.
               </p>
               <div className="flex flex-wrap gap-2">
                 {['Python', 'FastAPI', 'MongoDB', 'Redis', 'Docker'].map((tech) => (
@@ -216,8 +186,7 @@ function App() {
                 </a>
               </div>
               <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                Open-source collection of CLI tools and VS Code extensions to improve developer productivity. 
-                Used by 10k+ developers worldwide with 500+ GitHub stars.
+                Open-source collection of CLI tools and VS Code extensions to improve developer productivity. Used by 10k+ developers worldwide with 500+ GitHub stars.
               </p>
               <div className="flex flex-wrap gap-2">
                 {['TypeScript', 'Node.js', 'VS Code API', 'CLI', 'NPM'].map((tech) => (
@@ -280,6 +249,7 @@ function App() {
           </p>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
