@@ -1,0 +1,68 @@
+name: Deploy static site to Azure Storage
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  SITE_DIR: dist            # change to your built/static files directory (e.g., "build", "public")
+  STORAGE_ACCOUNT_NAME: ${{ vars.STORAGE_ACCOUNT_NAME }}
+  INDEX_DOCUMENT: index.html
+  ERROR_DOCUMENT: 404.html
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Optional build step (uncomment/customize if you need to build)
+      # - name: Use Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 20
+      # - name: Install and build
+      #   run: |
+      #     npm ci
+      #     npm run build
+
+      - name: Login to Azure (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Ensure static website is enabled
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            az storage blob service-properties update \
+              --account-name "$STORAGE_ACCOUNT_NAME" \
+              --static-website \
+              --index-document "$INDEX_DOCUMENT" \
+              --404-document "$ERROR_DOCUMENT" \
+              --auth-mode login \
+              --only-show-errors
+
+      - name: Upload files to $web
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            if [ ! -d "$SITE_DIR" ]; then
+              echo "Site directory '$SITE_DIR' not found"; exit 1
+            fi
+            az storage blob upload-batch \
+              --account-name "$STORAGE_ACCOUNT_NAME" \
+              --auth-mode login \
+              -s "$SITE_DIR" \
+              -d '$web' \
+              --overwrite \
+              --only-show-errors
