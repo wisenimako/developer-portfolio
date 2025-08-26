@@ -149,6 +149,36 @@ function App() {
                 ))}
               </div>
             </div>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8 flex items-center gap-3">
+              <Briefcase className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+              Projects and Achievements
+            </h2>
+            <div className="space-y-8">
+              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Computerized Schools Selection And Placement System (CSSPS), June 2025</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                  For the Ministry of Education. Application was run on an Elastic Container Service on AWS with a global scalable database that supports 600,000 students in checking their high school placements.
+                </p>
+              </div>
+              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">GIS/MapStore Application Deployment for Volta River Authority, March 2025</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                  Deployed GIS/MapStore docker images to Azure App Service using Infrastructure as Code (Terraform). Application was used to monitor dam water levels in order to notify citizens during controlled spillage.
+                </p>
+              </div>
+              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">E-Ticketing App, November 2024</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                  For citizens who cross the Volta Lake for working activities, they could generate virtual tickets for ferries used in commuting. Application hosted on Azure App Service. Eliminating human issued tickets and thus improving citizen accessibility to ferries by 60%.
+                </p>
+              </div>
+              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">OnePay USSD Deployment, April 2024</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                  Hosted an application that serves as a single point of entry to multiple payment APIs for the client. Improved their partner onboarding process by 25% due to standardization of APIs. 2023 – 2024
+                </p>
+              </div>
+            </div>
 
             <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:border-blue-200 dark:hover:border-blue-600">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
